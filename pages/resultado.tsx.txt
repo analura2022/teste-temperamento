@@ -1,0 +1,24 @@
+import { useEffect, useState } from 'react';
+
+export default function Resultado() {
+  const [temperamento, setTemperamento] = useState(null);
+
+  useEffect(() => {
+    // Aqui você pode obter os dados de pagamento, talvez chamando um endpoint para verificar o status
+    const fetchTemperamento = async () => {
+      const response = await fetch('/api/verify_payment');
+      const data = await response.json();
+      setTemperamento(data.temperamento);
+    };
+    fetchTemperamento();
+  }, []);
+
+  if (!temperamento) return <div>Carregando...</div>;
+
+  return (
+    <div>
+      <h1>Seu Temperamento é: {temperamento}</h1>
+      <p>Agora que você pagou, seu temperamento foi calculado com base nas suas respostas!</p>
+    </div>
+  );
+}
