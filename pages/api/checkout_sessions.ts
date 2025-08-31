@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Aplicar desconto com código GELLY
         discounts: [
           {
-            coupon: 'GELLY', // Código de desconto atualizado
+            coupon: 'GELLY', // Código de desconto GELLY
           },
         ],
       });
