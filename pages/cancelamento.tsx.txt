@@ -1,8 +1,0 @@
-export default function Cancelamento() {
-  return (
-    div
-      h1Pagamento Canceladoh1
-      pParece que o pagamento não foi concluído. Tente novamente.p
-    div
-  );
-}
